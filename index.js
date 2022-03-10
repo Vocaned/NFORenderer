@@ -1,6 +1,7 @@
 function fileDrop(ev) {
     ev.preventDefault();
 
+    // Get file from drop event
     let file;
     if (ev.dataTransfer.files) {
         file = ev.dataTransfer.files[0];
@@ -10,8 +11,8 @@ function fileDrop(ev) {
         }
     } else return;
 
+    // Read file
     const reader = new FileReader();
-
     reader.addEventListener("load", () => {
         let final = [];
         for (let line of Cp437Helper().convertToUTF8(reader.result).split('\n')) {

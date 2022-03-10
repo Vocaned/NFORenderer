@@ -23,6 +23,8 @@
                 position: absolute;
                 left: 50%;
                 transform: translate(-50%, 0);
+                padding: 20px;
+                margin: 0;
             }
             @font-face {
                 font-family: "ibm_vga_8x16";
@@ -33,6 +35,6 @@
         <script src='index.js'></script>
     </head>
     <body ondrop="fileDrop(event);" ondragover="event.preventDefault();">
-        <pre id="content"></pre>
+        <pre id="content">Drag and Drop an NFO file to the page to view it.</pre>
     </body>
 </html>
