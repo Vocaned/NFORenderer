@@ -9,9 +9,18 @@ function fileDrop(ev) {
         if (ev.dataTransfer.items[0].kind === 'file') {
             file = ev.dataTransfer.items[0].getAsFile();
         }
-    } else return;
+    }
 
-    // Read file
+    if (file) displayFile(file);
+}
+
+function fileUpload(ev) {
+    if (ev.target.files) {
+        displayFile(ev.target.files[0]);
+    }
+}
+
+function displayFile(file) {
     const reader = new FileReader();
     reader.addEventListener("load", () => {
         let final = [];
